@@ -1,7 +1,8 @@
 Medinst::Application.routes.draw do
-  get "pages/index"
 
-  get "pages/show"
+  match '/news' => 'news#index'
+
+  resources :pages
 
   ActiveAdmin.routes(self)
 
