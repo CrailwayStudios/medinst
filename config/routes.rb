@@ -1,12 +1,18 @@
 Medinst::Application.routes.draw do
 
-  match '/news' => 'news#index'
+  devise_for :users
+  devise_for :users, :path => "users",
+             :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret',
+                              :confirmation => 'verification', :unlock => 'unblock',
+                              :registration => 'register', :sign_up => 'signup' }
 
+  resource :news
   resources :pages
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
