@@ -21,6 +21,7 @@
 
 
   %body
+    = current_user.role
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -43,7 +44,11 @@
               %li= link_to "Полезное", "#"
               %li= link_to "Вопросы", "#"
               %li= link_to "Альбомы", albums_path
-              -#%li= link_to "Вход/Регистрация", "#"
+              - if current_user
+                %li= link_to "Выйти (#{current_user.username})", destroy_user_session_path, :method => :delete
+              - else
+                %li= link_to "Войти", new_user_session_path
+                %li= link_to "Регистрация", new_user_registration_path
 
 
     .container

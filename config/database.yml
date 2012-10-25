@@ -2,20 +2,8 @@ development:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: postgres
-  password: postgres
-  database: medinst
-  schema_search_path: public
-  encoding: utf8
-  template: template1
-
-
-production:
-  adapter: postgresql
-  host: localhost
-  port: 5432
-  username: postgres
-  password: postgres
+  username: blog
+  password: 123456
   database: medinst
   schema_search_path: public
   encoding: utf8
