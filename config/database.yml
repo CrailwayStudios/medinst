@@ -2,8 +2,8 @@ development:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: blog
-  password: 123456
+  username: postgres
+  password: postgres
   database: medinst
   schema_search_path: public
   encoding: utf8
