@@ -1,6 +1,14 @@
 Medinst::Application.routes.draw do
 
+  get "newspaper/index"
+
+  get "albums/index"
+
+  get "albums/show"
+
   match '/news' => 'news#index'
+  match '/albums' => 'albums#index'
+  match '/newspaper' => 'newspaper#index'
 
   resources :pages
 
